@@ -40,7 +40,10 @@ void FixedUpdate(){
  
 
   void OnCollisionEnter2D(Collision2D other){
-    isGrounded = true;
+
+
+    if(other.gameObject.tag == "Ground"){
+    isGrounded = true;}
     
       
   }
