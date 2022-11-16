@@ -25,15 +25,14 @@ void FixedUpdate(){
     Vector4 verticalmovement = new Vector4(0,movementY);
     rb.AddForce(horizontalmovement * speed);
     if(isGrounded & movementY > 0){
-       Debug.Log("run");
-       if(movementX != 0){
+      Debug.Log("run");
+      if (movementX != 0) {
         rb.AddForce(verticalmovement * jumpamount * 1.5f, ForceMode2D.Impulse);
-       }
-       else{
-       rb.AddForce(verticalmovement * jumpamount, ForceMode2D.Impulse);}
+      } else {
+       rb.AddForce(verticalmovement * jumpamount, ForceMode2D.Impulse);
       }
-
-      }
+    }
+}
 
     
 
