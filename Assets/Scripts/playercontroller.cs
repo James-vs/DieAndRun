@@ -41,16 +41,19 @@ void FixedUpdate(){
   void OnCollisionEnter2D(Collision2D other){
 
 
-    if(other.gameObject.tag == "Ground"){
+    if(other.gameObject.CompareTag("Ground")){
     isGrounded = true;}
     
       
   }
   
   void OnCollisionExit2D(Collision2D other){
-    isGrounded = false;
-    Debug.Log("Is Grounded = " + isGrounded);
-       }
+    if (other.gameObject.CompareTag("Ground")) {
+      isGrounded = false;
+      Debug.Log("Is Grounded = " + isGrounded);
+    }
+    
+  }
 
 }      
 
