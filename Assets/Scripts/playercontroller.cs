@@ -10,6 +10,8 @@ private float movementY;
 public float speed = 0;
 public float jumpamount = 0;
 public bool isGrounded = false;
+public bool hasKey = false;
+
 
     // Start is called before the first frame update
 void Start() { rb = GetComponent<Rigidbody2D>(); }
