@@ -42,12 +42,12 @@ GameObject:
   - component: {fileID: 865997791392985989}
   - component: {fileID: 6840433363232260399}
   - component: {fileID: 2210237930398242583}
-  - component: {fileID: 8070059190777087124}
   - component: {fileID: 783688296902995555}
   - component: {fileID: -2756080197449611809}
+  - component: {fileID: 8070059190777087124}
   m_Layer: 0
   m_Name: Saw
-  m_TagString: Untagged
+  m_TagString: Hazards
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,30 +136,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0854c1565f12ebe45bd26506c97e6920, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8070059190777087124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7332691253188314690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513ef90b5ed764e45a12812b6eb635db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrol: 0
-  patrolSpeed: 0
-  groundDetector: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  bodyCollider: {fileID: 0}
 --- !u!70 &783688296902995555
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -202,3 +183,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.90566254, y: 0.20486069}
   m_EdgeRadius: 0
+--- !u!114 &8070059190777087124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7332691253188314690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513ef90b5ed764e45a12812b6eb635db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrol: 0
+  patrolSpeed: 100
+  groundDetector: {fileID: 3976975122675941152}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  bodyCollider: {fileID: 783688296902995555}
+  wallsLayer:
+    serializedVersion: 2
+    m_Bits: 64
