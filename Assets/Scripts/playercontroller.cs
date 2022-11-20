@@ -15,6 +15,8 @@ public GameObject corpse;
 public bool isLookingRight = true;
 private SpriteRenderer spriteR;
 public float coinCount = 0f;
+public float deathCount = 0f;
+public float startTime = Time.deltaTime;
 
 
     // Start is called before the first frame update
@@ -89,9 +91,6 @@ void FixedUpdate(){
   void OnCollisionExit2D(Collision2D other){
     if(other.gameObject.tag == "Ground"){
     isGrounded = false;}
-    else{
-      isGrounded = true;
-    }
        }
 
   void OnCollisionStay2D(Collision2D other){
@@ -104,6 +103,8 @@ void FixedUpdate(){
     Instantiate(corpse, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
     gameObject.transform.position =  new Vector3(-3.86f,-0.97f);
     Debug.Log("Coins collected: " + coinCount);
+    deathCount += 1f;
+    Debug.Log("Died Again! Death count: " + deathCount);
   }
 
 }      
