@@ -8,8 +8,8 @@ public class FollowPlayer : MonoBehaviour
     public GameObject player;
 
     //offsets for the camera
-    public float yOffset = 2f;
-    public float zOffset = 10f;
+    public float yOffset = 0;
+    private float zOffset = -1;
     //initial player y position
     private float cameraYPos = 0f;
 
@@ -25,26 +25,25 @@ public class FollowPlayer : MonoBehaviour
     {
         float playerYPosition = player.gameObject.transform.position.y;
         float playerXPosition = player.gameObject.transform.position.x;
-        float playerZPosition = player.gameObject.transform.position.z;
         if(playerXPosition < 3f){
-            transform.position = new Vector3(3f, cameraYPos + yOffset, playerZPosition - zOffset);
+            transform.position = new Vector3(3f, cameraYPos + yOffset,zOffset);
         } //else if (playerYPosition > 5f) {
             //cameraYPos = -1f;
             //transform.position = new Vector3(playerXPosition, cameraYPos, playerZPosition - zOffset);
          else if (playerYPosition > 3f ) {//&& cameraYPos >= -1f
-            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset, playerZPosition - zOffset);
+            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset,zOffset);
         } else if (playerYPosition < 2f && playerYPosition >= 1f) {
 
-            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset, playerZPosition - zOffset);
+            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset,zOffset);
         }
         else if (playerYPosition < -2.5f && playerYPosition >= -3.5f) {
 
-           transform.position = new Vector3(playerXPosition, cameraYPos + yOffset, playerZPosition - zOffset);
+           transform.position = new Vector3(playerXPosition, cameraYPos + yOffset,zOffset);
         } else if (playerYPosition < -3.5f) {
-            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset, playerZPosition - zOffset);
+            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset,zOffset);
         }
         else {
-            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset, playerZPosition - zOffset);
+            transform.position = new Vector3(playerXPosition, cameraYPos + yOffset,zOffset);
         }
     }
 }

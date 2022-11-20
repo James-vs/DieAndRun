@@ -42,7 +42,7 @@ public class GateLogic : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Player"){
-      if(other.gameObject.GetComponent<playercontroller>().hasKey == true){
+      if(other.gameObject.GetComponent<PlayerController>().hasKey == true){
         Debug.Log("move = true");
         moveUp = true;
       };

@@ -180,3 +180,5 @@ MonoBehaviour:
   speed: 100
   jumpamount: 50
   isGrounded: 0
+  hasKey: 0
+  corpse: {fileID: 6778798257090539376, guid: 5856459b990c5a44b87037bfada07358, type: 3}

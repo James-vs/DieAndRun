@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class keylogic : MonoBehaviour
+public class KeyLogic : MonoBehaviour
 {
   public GameObject player;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class keylogic : MonoBehaviour
 
 
     if(other.gameObject.tag == "Player"){
-      other.gameObject.GetComponent<playercontroller>().hasKey = true;
+      other.gameObject.GetComponent<PlayerController>().hasKey = true;
     Destroy(gameObject);}
     
       
