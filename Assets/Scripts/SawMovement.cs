@@ -18,6 +18,8 @@ public class SawMovement : MonoBehaviour
     public LayerMask groundLayer;
     //variable to get the body collider
     public Collider2D bodyCollider;
+    //variable to assign the walls layer
+    public LayerMask wallsLayer;
 
 
     // Start is called before the first frame update
@@ -33,7 +35,7 @@ public class SawMovement : MonoBehaviour
     {
         //transform.Rotate(new Vector3 (0f, 0f, 90f) * Time.deltaTime);
         if (patrol) {
-            mustFlip = !Physics2D.OverlapCircle(groundDetector.position, 0.2f, groundLayer);
+            mustFlip = !Physics2D.OverlapCircle(groundDetector.position, 0.4f, groundLayer);
         }
     }
 
@@ -45,7 +47,7 @@ public class SawMovement : MonoBehaviour
 
     //function to control saw patrolling
     void Patrol() {
-        if (mustFlip || bodyCollider.IsTouchingLayers(groundLayer)) {//
+        if (mustFlip || bodyCollider.IsTouchingLayers(groundLayer) || bodyCollider.IsTouchingLayers(wallsLayer)) {//
             TurnAround();
         }
         rb.velocity = new Vector2(patrolSpeed * Time.fixedDeltaTime, rb.velocity.y);
