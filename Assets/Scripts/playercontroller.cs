@@ -13,7 +13,8 @@ public bool isGrounded = false;
 public bool hasKey = false;
 public GameObject corpse;
 public bool isLookingRight = true;
-private SpriteRenderer spriteR;
+public SpriteRenderer spriteR;
+public GameObject key;
 public float coinCount = 0f;
 public float deathCount = 0f;
 public float startTime = Time.deltaTime;
@@ -21,7 +22,11 @@ public float startTime = Time.deltaTime;
 
     // Start is called before the first frame update
 void Start() { rb = GetComponent<Rigidbody2D>();
-spriteR = gameObject.GetComponent<SpriteRenderer>();}
+spriteR = gameObject.GetComponent<SpriteRenderer>();
+key = GameObject.Find("Key");
+
+
+}
 
 void OnMove(InputValue movementValue){
     Vector2 movementVector = movementValue.Get<Vector2>();
@@ -71,17 +76,14 @@ void FixedUpdate(){
  
 
   void OnCollisionEnter2D(Collision2D other){
-    Debug.Log(other.gameObject.tag);
 
 
-    if(other.gameObject.tag == "Ground"){
+
+    if(other.gameObject.tag == "Ground" ){
     isGrounded = true;}
     else{isGrounded = false;}
     if(other.gameObject.tag == "Hazards"){
       die();
-    } else if (other.gameObject.CompareTag("Coin")) {
-      coinCount += 1;
-      Debug.Log("Got another coin!");
     }
   
     
@@ -102,6 +104,8 @@ void FixedUpdate(){
     isGrounded = false;
     Instantiate(corpse, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
     gameObject.transform.position =  new Vector3(-3.86f,-0.97f);
+    key.SetActive(true);
+    hasKey = false;
     Debug.Log("Coins collected: " + coinCount);
     deathCount += 1f;
     Debug.Log("Died Again! Death count: " + deathCount);
