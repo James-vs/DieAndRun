@@ -7,20 +7,17 @@ using Debug=UnityEngine.Debug;
 public class TimeCountScript : MonoBehaviour
 {
     //player 
-    public Transform chest;
+    public Transform eventsSystem;
     public TextMeshProUGUI tmp;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //kjdfkjd
-    }
 
     // Update is called once per frame
     void Update()
     {
-        ChestLogic timer = chest.GetComponent<ChestLogic>();
-        Debug.Log("Time: " + timer.time.Elapsed);
-        tmp.text = timer.time.ElapsedTicks.ToString("0");
+        Timer timer = eventsSystem.GetComponent<Timer>();
+        Debug.Log("Time Elapsed: " + timer.timeElapsed);
+        //Debug.Log("Time: " + timer.time.Elapsed);
+        tmp.text = timer.timeElapsed.ToString("0");
     }
 }
