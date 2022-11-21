@@ -18,7 +18,7 @@ public SpriteRenderer spriteR;
 public GameObject key;
 public float coinCount = 0f;
 public float deathCount = 0f;
-//public float startTime = Time.deltaTime;
+
 
 
     // Start is called before the first frame update
@@ -102,7 +102,7 @@ void FixedUpdate(){
     isGrounded = true;}
   }     
 
-  void die(){
+  public void die(){
     isGrounded = false;
     Instantiate(corpse, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
     gameObject.transform.position =  new Vector3(-3.86f,-0.97f);
