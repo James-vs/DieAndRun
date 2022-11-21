@@ -15,6 +15,9 @@ public GameObject corpse;
 public bool isLookingRight = true;
 public SpriteRenderer spriteR;
 public GameObject key;
+public float coinCount = 0f;
+public float deathCount = 0f;
+public float startTime = Time.deltaTime;
 
 
     // Start is called before the first frame update
@@ -103,6 +106,9 @@ void FixedUpdate(){
     gameObject.transform.position =  new Vector3(-3.86f,-0.97f);
     key.SetActive(true);
     hasKey = false;
+    Debug.Log("Coins collected: " + coinCount);
+    deathCount += 1f;
+    Debug.Log("Died Again! Death count: " + deathCount);
   }
 
 }      
