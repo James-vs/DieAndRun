@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PlayerController : MonoBehaviour
+public class WASDPlayerController : MonoBehaviour
 {
 Rigidbody2D rb;
 private float movementX;
@@ -10,22 +10,23 @@ private float movementY;
 public float speed = 0;
 public float jumpamount = 0;
 public bool isGrounded = false;
-public bool hasKey = false;
+//hasKey function different for WASD tutorial level
+public bool hasKey = true;
 public GameObject corpse;
 public bool isLookingRight = true;
 [HideInInspector]
 public SpriteRenderer spriteR;
-public GameObject key;
+//public GameObject key;
 public float coinCount = 0f;
 public float deathCount = 0f;
 
 
 
     // Start is called before the first frame update
-void Start() { rb = GetComponent<Rigidbody2D>();
-spriteR = gameObject.GetComponent<SpriteRenderer>();
-key = GameObject.Find("Key");
-
+void Start() { 
+  rb = GetComponent<Rigidbody2D>();
+  spriteR = gameObject.GetComponent<SpriteRenderer>();
+  //key = GameObject.Find("Key");
 
 }
 
@@ -55,30 +56,19 @@ void FixedUpdate(){
     if(isGrounded){
        if(movementX != 0){
         rb.AddForce(verticalmovement * jumpamount * 1.5f, ForceMode2D.Impulse);
-       }
-       else{
+       } else {
        rb.AddForce(verticalmovement * jumpamount, ForceMode2D.Impulse);}
-      }
+    }
 
     if(isLookingRight){
       spriteR.flipX = false;
-    }
-    else{spriteR.flipX = true;}
-
-
-    
+    } else {spriteR.flipX = true;}
     
     }
 
 
-
-    
-
- 
 
   void OnCollisionEnter2D(Collision2D other){
-
-
 
     if(other.gameObject.tag == "Ground" ){
     isGrounded = true;}
@@ -87,9 +77,7 @@ void FixedUpdate(){
     } else if (other.gameObject.CompareTag("Coin")) {
       coinCount += 1f;
     }
-  
-    
-      
+   
   }
   
   void OnCollisionExit2D(Collision2D other){
@@ -106,11 +94,10 @@ void FixedUpdate(){
     isGrounded = false;
     Instantiate(corpse, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
     gameObject.transform.position =  new Vector3(-3.86f,-0.97f);
-    deathCount += 1f;
-    key.SetActive(true);
-    hasKey = false;
+    //key.SetActive(true);
+    //hasKey = false;
     Debug.Log("Coins collected: " + coinCount);
-    
+    deathCount += 1f;
     Debug.Log("Died Again! Death count: " + deathCount);
   }
 
