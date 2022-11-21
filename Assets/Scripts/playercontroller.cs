@@ -13,10 +13,12 @@ public bool isGrounded = false;
 public bool hasKey = false;
 public GameObject corpse;
 public bool isLookingRight = true;
+[HideInInspector]
 public SpriteRenderer spriteR;
 public GameObject key;
 public float coinCount = 0f;
 public float deathCount = 0f;
+
 
 
     // Start is called before the first frame update
@@ -80,9 +82,10 @@ void FixedUpdate(){
 
     if(other.gameObject.tag == "Ground" ){
     isGrounded = true;}
-    else{isGrounded = false;}
     if(other.gameObject.tag == "Hazards"){
       die();
+    } else if (other.gameObject.CompareTag("Coin")) {
+      coinCount += 1f;
     }
   
     
