@@ -23,7 +23,7 @@ public class KeyLogic : MonoBehaviour
 
     if(other.gameObject.tag == "Player"){
       other.gameObject.GetComponent<PlayerController>().hasKey = true;
-    Destroy(gameObject);}
+    gameObject.SetActive(false);}
     
       
   }
