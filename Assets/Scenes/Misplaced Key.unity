@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75, y: -165.3}
+  m_AnchoredPosition: {x: -31, y: -165.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305038859
@@ -13594,7 +13594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.6, y: -165.3}
+  m_AnchoredPosition: {x: 110, y: -165.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472091759
@@ -13640,7 +13640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1472091760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 517803407}
+        m_TargetAssemblyTypeName: RetryScript, Assembly-CSharp
+        m_MethodName: onClickNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1472091760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15238,8 +15250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954062539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.1138, y: 0.4265, z: 0}
-  m_LocalScale: {x: 2.6524801, y: 1.047516, z: 1}
+  m_LocalPosition: {x: 37.1191, y: 0.4904, z: 0}
+  m_LocalScale: {x: 2.5994232, y: 0.91974777, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1987710923}
@@ -15947,7 +15959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misplaced Key
+  m_text: 'Level 2: Misplaced Key'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d54ebe4134416ce4d96d04705baaca01, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d54ebe4134416ce4d96d04705baaca01, type: 2}

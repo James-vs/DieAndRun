@@ -40,8 +40,12 @@ public class Level4GateLogic : MonoBehaviour
     
         if(player.GetComponent<PlayerController>().isLookingRight == false){
           moveUp = true;
+          movementspeed = 3f;
         }
-        else{moveUp = false;}
+        else{
+            moveUp = false;
+            movementspeed = 1f;    
+        }
         
         }    
         
