@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WAS D Problem.unity
+    guid: 5be0ff5b9d768924da6a3b4569c6a4a7
+  - enabled: 1
+    path: Assets/Scenes/Misplaced Key.unity
+    guid: be04909367fbb534c9b98317871a2a69
+  - enabled: 1
+    path: Assets/Scenes/Shiny Trinkets.unity
+    guid: 4b4d39810a31577448b765a3f1fa0ee2
+  - enabled: 1
+    path: Assets/Scenes/TheShyGate.unity
+    guid: be71b252c7815464cbe38d5e6b473b55
+  - enabled: 1
+    path: Assets/Scenes/Kamikaze.unity
+    guid: ba377f7c5e4eba44b9b418609a0bff5b
+  - enabled: 1
+    path: Assets/Scenes/WheresWASD.unity
+    guid: 44ad1ae769803544c820a7cf57678185
   m_configObjects: {}

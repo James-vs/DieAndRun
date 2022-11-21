@@ -15,4 +15,8 @@ public class RetryScript : MonoBehaviour
     public void onClick(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void onClickNext() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
