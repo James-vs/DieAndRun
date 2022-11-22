@@ -9,6 +9,7 @@ public class ChestLogic : MonoBehaviour
 
 public GameObject canvas;
 public GameObject player;
+public AudioSource chest;
     // Start is called before the first frame 
 //public Stopwatch time;
     
@@ -21,6 +22,7 @@ void OnCollisionEnter2D(Collision2D other){
     if(other.gameObject.tag == "Player"){
         canvas.GetComponent<EndScreenScript>().levelHasEnded = true;
         other.gameObject.SetActive(false);
+        chest.Play();
         //time.Stop();
         //Debug.Log(time.Elapsed);
     }

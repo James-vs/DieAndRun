@@ -11,6 +11,7 @@ public class GateLogic : MonoBehaviour
     public float distancemoveddown;
     private bool condition;
     public bool moveUp;
+    public AudioSource gateSound;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class GateLogic : MonoBehaviour
       if(other.gameObject.GetComponent<PlayerController>().hasKey == true){
         Debug.Log("move = true");
         moveUp = true;
+        gateSound.Play();
       };
     
     }}

@@ -5,7 +5,9 @@ using UnityEngine;
 public class EndScreenScript : MonoBehaviour
 {
     public bool levelHasEnded = false;
+    public bool levelHasFailed = false;
     public GameObject endLevelUI;
+    public GameObject failLevelUI;
     public PlayerController playerController;
     public Timer timer;
     public int parCoins = 0;
@@ -25,6 +27,8 @@ public class EndScreenScript : MonoBehaviour
     {
         if(levelHasEnded == true){
             endLevel();
+        } else if (levelHasFailed) {
+            failLevel();
         }
         else{notEndLevel();}
 
@@ -47,6 +51,12 @@ public class EndScreenScript : MonoBehaviour
             GameObject.Find("TimeTakenStar").SetActive(false);
         }
         
+    }
+
+    void failLevel(){
+        failLevelUI.SetActive(true);
+        gameUI.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     void notEndLevel(){
