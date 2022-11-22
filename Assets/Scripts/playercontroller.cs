@@ -21,6 +21,7 @@ public float deathCount = 0f;
 public AudioSource jumpSoundEffect;
 public AudioSource deathSoundEffect;
 public AudioSource coinCollectSoundEffect;
+public AudioSource keyAudio;
 
 
 
@@ -96,6 +97,8 @@ void FixedUpdate(){
     } else if (other.gameObject.CompareTag("Coin")) {
       coinCount += 1f;
       coinCollectSoundEffect.Play();
+    } else if (other.gameObject.CompareTag("Key")) {
+      keyAudio.Play();
     }
   
     

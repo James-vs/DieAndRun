@@ -12,6 +12,7 @@ public class Level4GateLogic : MonoBehaviour
     private bool condition;
     public bool moveUp;
     public GameObject player;
+    public AudioSource gateAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -29,18 +30,21 @@ public class Level4GateLogic : MonoBehaviour
     {
         condition = startposy - (distancemoveddown) < gameObject.transform.position.y;
         if(moveUp){
-        if(condition){
-        gameObject.transform.Translate(0,-1 * Time.deltaTime * movementspeed,0);}
+            if (!gateAudio.isPlaying)gateAudio.Play();
+            if(condition){
+                gameObject.transform.Translate(0,-1 * Time.deltaTime * movementspeed,0);
+            }
         }
         else{
-        if(startposy > gameObject.transform.position.y){gameObject.transform.Translate(0,1 * Time.deltaTime * movementspeed,0);}
-        if(startposy < gameObject.transform.position.y){gameObject.transform.position = new Vector3(startposx,startposy,startposz);}
+            if(startposy > gameObject.transform.position.y){gameObject.transform.Translate(0,1 * Time.deltaTime * movementspeed,0);}
+            if(startposy < gameObject.transform.position.y){gameObject.transform.position = new Vector3(startposx,startposy,startposz);}
         }
         
     
         if(player.GetComponent<PlayerController>().isLookingRight == false){
           moveUp = true;
           movementspeed = 3f;
+          
         }
         else{
             moveUp = false;
