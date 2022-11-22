@@ -120,7 +120,8 @@ void FixedUpdate(){
     Instantiate(corpse, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
     gameObject.transform.position =  new Vector3(-3.86f,-0.97f);
     deathCount += 1f;
-    key.SetActive(true);
+    if(key != null){
+    key.SetActive(true);};
     hasKey = false;
     deathSoundEffect.Play();
     Debug.Log("Coins collected: " + coinCount);

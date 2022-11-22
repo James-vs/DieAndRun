@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Welcome.unity
+    guid: feac3d0c21f268548b8aae25f044f574
+  - enabled: 1
     path: Assets/Scenes/WAS D Problem.unity
     guid: 5be0ff5b9d768924da6a3b4569c6a4a7
   - enabled: 1
@@ -23,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WheresWASD.unity
     guid: 44ad1ae769803544c820a7cf57678185
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 5981486bb7b2c3a4dbb9dd316d794252
   m_configObjects: {}
