@@ -18,6 +18,10 @@ public SpriteRenderer spriteR;
 public GameObject key;
 public float coinCount = 0f;
 public float deathCount = 0f;
+public AudioSource jumpSoundEffect;
+public AudioSource deathSoundEffect;
+public AudioSource coinCollectSoundEffect;
+
 
 
 
@@ -55,9 +59,14 @@ void FixedUpdate(){
     if(isGrounded){
        if(movementX != 0){
         rb.AddForce(verticalmovement * jumpamount * 1.5f, ForceMode2D.Impulse);
+        if(movementY > 0){
+        jumpSoundEffect.Play();}
        }
        else{
-       rb.AddForce(verticalmovement * jumpamount, ForceMode2D.Impulse);}
+       rb.AddForce(verticalmovement * jumpamount, ForceMode2D.Impulse);
+       if(movementY > 0){
+       jumpSoundEffect.Play();}
+       }
       }
 
     if(isLookingRight){
@@ -86,6 +95,7 @@ void FixedUpdate(){
       die();
     } else if (other.gameObject.CompareTag("Coin")) {
       coinCount += 1f;
+      coinCollectSoundEffect.Play();
     }
   
     
@@ -109,8 +119,8 @@ void FixedUpdate(){
     deathCount += 1f;
     key.SetActive(true);
     hasKey = false;
+    deathSoundEffect.Play();
     Debug.Log("Coins collected: " + coinCount);
-    
     Debug.Log("Died Again! Death count: " + deathCount);
   }
 

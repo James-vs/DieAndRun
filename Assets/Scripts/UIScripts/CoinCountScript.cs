@@ -19,7 +19,6 @@ public class CoinCountScript : MonoBehaviour
     void Update()
     {
         PlayerController controller = player.GetComponent<PlayerController>();
-        Debug.Log("coin count: " + controller.coinCount);
         tmp.text = controller.coinCount.ToString("0");
     }
 }
