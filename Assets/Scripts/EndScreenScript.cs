@@ -13,6 +13,10 @@ public class EndScreenScript : MonoBehaviour
     public int parCoins = 0;
     public int parDeaths = 0;
     public int parTime = 0;
+    public GameObject coinsStar;
+    public GameObject deathStar;
+    public GameObject timeStar;
+
     private GameObject gameUI;
 
 
@@ -42,13 +46,13 @@ public class EndScreenScript : MonoBehaviour
         Time.timeScale = 0f;
 
         if(playerController.coinCount < parCoins){
-            GameObject.Find("CoinsStar").SetActive(false);
+            coinsStar.SetActive(false);
         }
         if(playerController.deathCount > parDeaths){
-            GameObject.Find("DeathsStar").SetActive(false);
+            deathStar.SetActive(false);
         }
         if(((int) timer.timeElapsed) > parTime){
-            GameObject.Find("TimeTakenStar").SetActive(false);
+            timeStar.SetActive(false);
         }
         
     }
