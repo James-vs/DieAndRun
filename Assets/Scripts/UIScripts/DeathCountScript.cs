@@ -19,7 +19,6 @@ public class DeathCountScript : MonoBehaviour
     void Update()
     {
         PlayerController controller = player.GetComponent<PlayerController>();
-        Debug.Log("death count: " + controller.deathCount);
         tmp.text = controller.deathCount.ToString("0");
     }
 }
